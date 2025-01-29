@@ -12,7 +12,6 @@ docker exec pg_red_1 sh -c 'echo >> /var/lib/postgresql/data/pg_hba.conf "host r
 docker exec -d pg_red_1 sh -c "/bin/su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'"
 psql -p $PORT_RED -c 'create user repl with superuser'
 psql -p $PORT_RED -c 'create database mydb'
-psql -p $PORT_RED -c 'create database root'
 
 #pgbench -h localhost -U postgres -d mydb -i
 #pgbench -h localhost -U postgres -d mydb -P1 -j 10 -t 1000

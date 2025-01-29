@@ -2,7 +2,7 @@
   "title": "PostgreSQL on Fire - Playground",
   "description": "Basic env",
   "details": {
-      "steps": [
+    "steps": [
       {
         "title": "Playground",
         "text": "step1/text.md"
@@ -18,11 +18,11 @@
     },
     "assets": {
       "host01": [
-        {"file": "0-init/1-initdb-red.sh", "target": "/root/bin/0-init"},
-        {"file": "0-init/2-create-replica-green.sh", "target": "/root/bin/0-init"},
-        {"file": "0-init/3-create-replica-blue.sh", "target": "/root/bin/0-init"},
-        {"file": "1-load-data/load-pagilla-dataset.sh", "target": "/root/bin/1-load-data"},
-        {"file": "1-load-data/load-random-datatable.sh", "target": "/root/bin/1-load-data"},
+        {"file": "0-init/1-initdb-red.sh", "target": "/root/bin/0-init", "chmod": "+x"},
+        {"file": "0-init/2-create-replica-green.sh", "target": "/root/bin/0-init", "chmod": "+x"},
+        {"file": "0-init/3-create-replica-blue.sh", "target": "/root/bin/0-init", "chmod": "+x"},
+        {"file": "1-load-data/load-pagilla-dataset.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
+        {"file": "1-load-data/load-random-datatable.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "docker-compose.yaml", "target": "/ks/pg"},
         {"file": "bashrc-red", "target": "/ks"},
         {"file": "bashrc-green", "target": "/ks"},
