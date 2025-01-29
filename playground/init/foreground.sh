@@ -12,13 +12,13 @@ mount /pgroot /var/lib/postgresql/16
 sudo apt install -y postgresql-common
 sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh <<< ""
 
-#sudo apt install curl ca-certificates
+#sudo apt install -y curl ca-certificates
 #sudo install -d /usr/share/postgresql-common/pgdg
 #sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
 #sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 sudo apt update
-sudo apt install postgresql-16
+sudo apt install -y postgresql-16
 
 
 curl https://raw.githubusercontent.com/devrimgunduz/pagila/refs/heads/master/pagila-schema.sql | sudo -u postgres psql
@@ -180,10 +180,17 @@ EOF
 clear
 echo "YOU ARE READY TO GO!"
 
-echo "Checkout Menu -> Ports to access PgAdmin web console remote, if you like."
+echo "Check out Menu -> Ports to access PgAdmin web console remote, if you like."
 echo " postgres@killercoda.sh / postgres"
 echo
 echo There are 3 PG containers controlled via /ks/pg/docker-compose.yaml
-echo " red   port 6432, datadir /mnt/red:    docker exec -it pg_red_1 /bin/bash"
-echo " green port 7432, datadir /mnt/green:  docker exec -it pg_green_1 /bin/bash"
-echo " blue  port 8432, datadir /mnt/blue:   docker exec -it pg_blue_1 /bin/bash"
+echo " red   port \$PORT_RED   = 6432:5432, datadir /mnt/red:    docker exec -it pg_red_1 /bin/bash"
+echo " green port \$PORT_GREEN = 7432:5432, datadir /mnt/green:  docker exec -it pg_green_1 /bin/bash"
+echo " blue  port \$PORT_BLUE  = 8432:5432, datadir /mnt/blue:   docker exec -it pg_blue_1 /bin/bash"
+echo
+echo You can run initialize the cluster:
+echo $(ls 0-init/)
+echo
+echo Then you can load some data
+echo $(ls 1-load-data/)
+echo 
