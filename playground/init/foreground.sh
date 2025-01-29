@@ -179,3 +179,11 @@ EOF
 
 clear
 echo "YOU ARE READY TO GO!"
+
+echo "Checkout Menu -> Ports to access PgAdmin web console remote, if you like."
+echo " postgres@killercoda.sh / postgres"
+echo
+echo There are 3 PG containers controlled via /ks/pg/docker-compose.yaml
+echo " red   port 6432, datadir /mnt/red:    docker exec -it pg_red_1 /bin/bash"
+echo " green port 7432, datadir /mnt/green:  docker exec -it pg_green_1 /bin/bash"
+echo " blue  port 8432, datadir /mnt/blue:   docker exec -it pg_blue_1 /bin/bash"
