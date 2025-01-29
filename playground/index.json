@@ -24,9 +24,9 @@
         {"file": "1-load-data/load-pagilla-dataset.sh", "target": "/root/bin/1-load-data"},
         {"file": "1-load-data/load-random-datatable.sh", "target": "/root/bin/1-load-data"},
         {"file": "docker-compose.yaml", "target": "/ks/pg"},
-        {"file": "bashrc-red", "target": "/ks/bashrc-red"},
-        {"file": "bashrc-green", "target": "/ks/bashrc-green"},
-        {"file": "bashrc-blue", "target": "/ks/bashrc-blue"},
+        {"file": "bashrc-red", "target": "/ks"},
+        {"file": "bashrc-green", "target": "/ks"},
+        {"file": "bashrc-blue", "target": "/ks"},
         {"file": "wait-background.sh", "target": "/ks", "chmod": "+x"}
       ]
     }

@@ -191,6 +191,6 @@ echo
 echo You can run initialize the cluster:
 echo $(ls 0-init/)
 echo
-echo Then you can load some data
+echo Then you can load some data: ./bin/1-load-data/*
 echo $(ls 1-load-data/)
 echo 

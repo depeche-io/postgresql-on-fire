@@ -8,7 +8,7 @@ services:
       - "/mnt/red/:/var/lib/postgresql/"
       - "/mnt/wal-archive/:/mnt/wal-archive"
       - "/root/bin/:/root/bin/"
-      - "/ks/red-bashrc:/root/.bashrc"
+      - "/ks/bashrc-red:/root/.bashrc"
     ports:
       - "6432:5432"
 
@@ -20,7 +20,7 @@ services:
       - "/mnt/green/:/var/lib/postgresql/"
       - "/mnt/wal-archive/:/mnt/wal-archive"
       - "/root/bin/:/root/bin/"
-      - "/ks/green-bashrc:/root/.bashrc"
+      - "/ks/bashrc-green:/root/.bashrc"
     ports:
       - "7432:5432"
 
@@ -32,7 +32,7 @@ services:
       - "/mnt/blue/:/var/lib/postgresql/"
       - "/mnt/wal-archive/:/mnt/wal-archive"
       - "/root/bin/:/root/bin/"
-      - "/ks/blue-bashrc:/root/.bashrc"
+      - "/ks/bashrc-blue:/root/.bashrc"
     ports:
       - "8432:5432"
   admin:
