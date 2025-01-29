@@ -6,6 +6,7 @@ mkdir -p /mnt/red/ /mnt/green/ /mnt/blue/ /mnt/wal-archive/
 echo >>/root/.bashrc export PORT_RED=6432
 echo >>/root/.bashrc export PORT_GREEN=7432
 echo >>/root/.bashrc export PORT_BLUE=8432
+echo >>/root/.bashrc "export PATH=$PATH:/root/bin/:/root/bin/0-init/:/root/bin/1-load-data/"
 
 echo >>/root/.bashrc export PGUSER=postgres
 echo >>/root/.bashrc export PGHOST=localhost
