@@ -1,36 +1,37 @@
+version: "3.2"
 services:
-  pg-red:
+  red:
     image: postgres:17-alpine
     entrypoint: "/bin/bash -c 'apk add vim && /bin/sleep 720000'"
     working_dir: /root/bin
     volumes:
-      - "./pg-red/:/var/lib/postgresql/"
-      - "./wal-archive/:/mnt/wal-archive"
-      - "./bin/:/root/bin/"
-      - "./pg-red-bashrc:/root/.bashrc"
+      - "/mnt/red/:/var/lib/postgresql/"
+      - "/mnt/wal-archive/:/mnt/wal-archive"
+      - "/root/bin/:/root/bin/"
+      - "/ks/red-bashrc:/root/.bashrc"
     ports:
       - "6432:5432"
 
-  pg-green:
+  green:
     image: postgres:17-alpine
     entrypoint: "/bin/bash -c 'apk add vim && /bin/sleep 720000'"
     working_dir: /root/bin
     volumes:
-      - "./pg-green/:/var/lib/postgresql/"
-      - "./wal-archive/:/mnt/wal-archive"
-      - "./bin/:/root/bin/"
-      - "./pg-green-bashrc:/root/.bashrc"
+      - "/mnt/green/:/var/lib/postgresql/"
+      - "/mnt/wal-archive/:/mnt/wal-archive"
+      - "/root/bin/:/root/bin/"
+      - "/ks/green-bashrc:/root/.bashrc"
     ports:
       - "7432:5432"
 
-  pg-blue:
+  blue:
     image: postgres:17-alpine
     entrypoint: "/bin/bash -c 'apk add vim && /bin/sleep 720000'"
     working_dir: /root/bin
     volumes:
-      - "./pg-blue/:/var/lib/postgresql/"
-      - "./wal-archive/:/mnt/wal-archive"
-      - "./bin/:/root/bin/"
-      - "./pg-blue-bashrc:/root/.bashrc"
+      - "/mnt/blue/:/var/lib/postgresql/"
+      - "/mnt/wal-archive/:/mnt/wal-archive"
+      - "/root/bin/:/root/bin/"
+      - "/ks/blue-bashrc:/root/.bashrc"
     ports:
       - "8432:5432"

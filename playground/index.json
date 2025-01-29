@@ -18,9 +18,11 @@
     },
     "assets": {
       "host01": [
-        {"file": "docker-compose.yaml", "target": "/ks"},
-        {"file": "wait-background.sh", "target": "/ks", "chmod": "+x"},
-        {"file": "all-in-one.yaml", "target": "/tmp", "chmod": "+x"}
+        {"file": "docker-compose.yaml", "target": "/ks/pg"},
+        {"file": "bashrc-red", "target": "/ks/bashrc-red"},
+        {"file": "bashrc-green", "target": "/ks/bashrc-green"},
+        {"file": "bashrc-blue", "target": "/ks/bashrc-blue"},
+        {"file": "wait-background.sh", "target": "/ks", "chmod": "+x"}
       ]
     }
   },

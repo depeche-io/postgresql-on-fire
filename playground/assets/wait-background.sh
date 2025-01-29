@@ -6,7 +6,7 @@ rm $0
 
 clear
 
-echo -n "Initialising Kubernetes..."
+echo -n "Initialising PostgreSQL containers..."
 while [ ! -f /ks/.k8sfinished ]; do
     echo -n '.'
     sleep 1;

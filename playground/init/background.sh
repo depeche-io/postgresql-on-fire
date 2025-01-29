@@ -1,18 +1,15 @@
 #!/bin/bash
 
+mkdir -p /root/bin/
+mkdir -p /mnt/red/ /mnt/green/ /mnt/blue/ /mnt/wal-archive/
 
+echo >>/root/.bashrc export PGUSER=postgres
+echo >>/root/.bashrc export PGHOST=localhost
 
 # wait fo k8s ready
-while ! kubectl get nodes | grep -w "Ready"; do
-  echo "WAIT FOR NODES READY"
-  sleep 1
-done
+cd /ks/pg
+docker-compose up -d
 touch /ks/.k8sfinished
-
-# allow pods to run on controlplane
-kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
-kubectl drain --ignore-daemonsets node01
-
 
 # mark init finished
 touch /ks/.initfinished
