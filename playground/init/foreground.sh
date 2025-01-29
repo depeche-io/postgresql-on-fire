@@ -169,6 +169,8 @@ https://www.cybertec-postgresql.com/en/how-to-corrupt-your-postgresql-database/
 WAL corruption?
 https://www.cybertec-postgresql.com/en/pg_resetwal-when-to-reset-the-wal-in-postgresql/
 
+mention: https://www.cybertec-postgresql.com/en/icu-collations-against-postgresql-data-corruption/
+
 
 
 

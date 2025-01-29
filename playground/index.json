@@ -18,12 +18,13 @@
     },
     "assets": {
       "host01": [
+        {"file": "docker-compose.yaml", "target": "/ks"},
         {"file": "wait-background.sh", "target": "/ks", "chmod": "+x"},
         {"file": "all-in-one.yaml", "target": "/tmp", "chmod": "+x"}
       ]
     }
   },
   "backend": {
-    "imageid": "kubernetes-kubeadm-2nodes"
+    "imageid": "ubuntu-4GB"
   }
 }
