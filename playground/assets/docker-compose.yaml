@@ -35,11 +35,11 @@ services:
       - "/ks/bashrc-blue:/root/.bashrc"
     ports:
       - "8432:5432"
-  admin:
-    image: dpage/pgadmin4:8.14.0
-    ports: 
-      - "80:80"
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=postgres@killercoda.sh
-      - PGADMIN_DEFAULT_PASSWORD=postgres
-    # FIXME: prefabricate config
+  #admin:
+  #  image: dpage/pgadmin4:8.14.0
+  #  ports: 
+  #    - "80:80"
+  #  environment:
+  #    - PGADMIN_DEFAULT_EMAIL=postgres@killercoda.sh
+  #    - PGADMIN_DEFAULT_PASSWORD=postgres
+  #  # FIXME: prefabricate config
