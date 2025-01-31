@@ -8,10 +8,10 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=postgres@killercoda.sh
       - PGADMIN_DEFAULT_PASSWORD=postgres
-      
+    networks:
+      - pg_default
     # FIXME: prefabricate config
 
 networks:
-  default:
-    name: pg_default
+  pg_default:
     external: true
