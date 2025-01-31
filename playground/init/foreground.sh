@@ -144,25 +144,7 @@ https://www.cybertec-postgresql.com/en/pg_resetwal-when-to-reset-the-wal-in-post
 mention: https://www.cybertec-postgresql.com/en/icu-collations-against-postgresql-data-corruption/
 
 
-
-
-
 EOF
 
 clear
 echo "YOU ARE READY TO GO!"
-
-echo "Check out Menu -> Ports to access PgAdmin web console remote, if you like."
-echo " postgres@killercoda.sh / postgres"
-echo
-echo There are 3 PG containers controlled via /ks/pg/docker-compose.yaml
-echo " red   port \$PORT_RED   = 6432:5432, datadir /mnt/red:    docker exec -it pg_red_1 /bin/bash"
-echo " green port \$PORT_GREEN = 7432:5432, datadir /mnt/green:  docker exec -it pg_green_1 /bin/bash"
-echo " blue  port \$PORT_BLUE  = 8432:5432, datadir /mnt/blue:   docker exec -it pg_blue_1 /bin/bash"
-echo
-echo You can run initialize the cluster:
-echo $(ls 0-init/)
-echo
-echo Then you can load some data: ./bin/1-load-data/*
-echo $(ls 1-load-data/)
-echo 

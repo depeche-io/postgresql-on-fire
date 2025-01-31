@@ -18,11 +18,14 @@
     },
     "assets": {
       "host01": [
+        {"file": "0-init/0-init-all-for-me.sh", "target": "/root/bin/0-init", "chmod": "+x"},
         {"file": "0-init/1-initdb-red.sh", "target": "/root/bin/0-init", "chmod": "+x"},
         {"file": "0-init/2-create-replica-green.sh", "target": "/root/bin/0-init", "chmod": "+x"},
         {"file": "0-init/3-create-replica-blue.sh", "target": "/root/bin/0-init", "chmod": "+x"},
         {"file": "1-load-data/load-pagilla-dataset.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "1-load-data/load-random-datatable.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
+        {"file": "1-load-data/load-pgexercises.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
+        {"file": "1-load-data/pgbench.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "docker-compose.yaml", "target": "/ks/pg"},
         {"file": "bashrc-red", "target": "/ks"},
         {"file": "bashrc-green", "target": "/ks"},
