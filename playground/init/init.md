@@ -11,14 +11,14 @@ docker exec -it pg_red_1 /bin/bash
 ```{{exec}}
 
 *green*
-* port $PORT_GREEN = 7432:5432
+* port $PORT_GREEN = 7432 -> 5432
 * datadir /mnt/green
 ```plain
 docker exec -it pg_green_1 /bin/bash
 ```{{exec}}
 
 *blue*
-* port $PORT_BLUE = 8432:5432
+* port $PORT_BLUE = 8432 -> 5432
 * datadir /mnt/blue
 ```plain
 docker exec -it pg_blue_1 /bin/bash
