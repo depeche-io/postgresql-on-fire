@@ -25,3 +25,7 @@ touch /ks/.k8sfinished
 
 # mark init finished
 touch /ks/.initfinished
+
+# delayed - ~3 mins of startup
+cd /ks/pgadmin
+docker-compose up -d

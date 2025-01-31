@@ -7,21 +7,21 @@ There are 3 PG containers controlled via /ks/pg/docker-compose.yaml
 * port $PORT_RED = 6432 -> 5432
 * datadir /mnt/red
 ```plain
-docker exec -it pg_red_1 /bin/bash"
+docker exec -it pg_red_1 /bin/bash
 ```{{exec}}
 
 *green*
 * port $PORT_GREEN = 7432:5432
 * datadir /mnt/green
 ```plain
-docker exec -it pg_green_1 /bin/bash"
+docker exec -it pg_green_1 /bin/bash
 ```{{exec}}
 
 *blue*
 * port $PORT_BLUE = 8432:5432
 * datadir /mnt/blue
 ```plain
-docker exec -it pg_blue_1 /bin/bash"
+docker exec -it pg_blue_1 /bin/bash
 ```{{exec}}
 
 # Creating a Postgres database cluster
@@ -39,12 +39,12 @@ Or you can go more granular:
 2-create-replica-green.sh
 ```{{exec}}
 ```plain
-2-create-replica-blue.sh
+3-create-replica-blue.sh
 ```{{exec}}
 
 # Loading sample data
 
-You can use these to load some sample data creating `pagilla`, `datatable` and `mydb` databases:
+You can use these to load some sample data creating `pagilla`, `datatable`, `exercises` and `mydb` databases:
 ```plain
 load-pagilla-dataset.sh
 load-random-datatable.sh
@@ -71,6 +71,7 @@ Also, there is a PgAdmin4, if you like:
 * Check out Menu -> Ports to access port 80
 * postgres@killercoda.sh / postgres
 
-(setup connection to `red`, `green` or `blue` host as user `postgres`, password does not matter).
+(setup connection to `red`, `green` or `blue` host as user `postgres`, password does not matter)
+(takes ~3 mins to start, be patient or use `psql`)
 
 <br />

@@ -27,6 +27,7 @@
         {"file": "1-load-data/load-pgexercises.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "1-load-data/pgbench.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "docker-compose.yaml", "target": "/ks/pg"},
+        {"file": "pgadmin/docker-compose.yaml", "target": "/ks/pgadmin"},
         {"file": "bashrc-red", "target": "/ks"},
         {"file": "bashrc-green", "target": "/ks"},
         {"file": "bashrc-blue", "target": "/ks"},
