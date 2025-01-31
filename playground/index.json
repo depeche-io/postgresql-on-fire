@@ -1,6 +1,6 @@
 {
   "title": "PostgreSQL on Fire - Playground",
-  "description": "Basic env",
+  "description": "Basic env containing a Leader and 2 Replicas with several different demo databases for you to practise or start learning.",
   "details": {
     "steps": [
       {
