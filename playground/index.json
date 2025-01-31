@@ -25,6 +25,7 @@
         {"file": "1-load-data/load-pagilla-dataset.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "1-load-data/load-random-datatable.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "1-load-data/load-pgexercises.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
+        {"file": "1-load-data/load-neon-tutorial-dvdrental.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "1-load-data/pgbench.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
         {"file": "docker-compose.yaml", "target": "/ks/pg"},
         {"file": "pgadmin/docker-compose.yaml", "target": "/ks/pgadmin"},

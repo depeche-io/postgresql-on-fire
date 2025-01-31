@@ -44,11 +44,12 @@ Or you can go more granular:
 
 # Loading sample data
 
-You can use these to load some sample data creating `pagilla`, `datatable`, `exercises` and `mydb` databases:
+You can use these to load some sample data creating `pagilla`, `datatable`, `exercises`, `dvdrental` and `mydb` databases:
 ```plain
 load-pagilla-dataset.sh
 load-random-datatable.sh
 load-pgexercises.sh
+load-neon-tutorial-dvdrental.sh
 pgbench.sh
 ```{{exec}}
 

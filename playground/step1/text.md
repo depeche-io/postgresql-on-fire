@@ -11,6 +11,14 @@ You can try some exciting exercises out there (don't forget to load sample data 
 psql exercises
 ```{{exec}}
 
+# Neon PostgreSQL Tutorial
+
+[Start here](https://neon.tech/postgresql/postgresql-tutorial/postgresql-select), the sample data are available in `dvdrental` db:
+
+```plain
+psql dvdrental
+```{{exec}}
+
 # PostgreSQL Marathon Series (advanced)
 (by Nik Samokhvalov)
 
