@@ -71,7 +71,7 @@ Also, there is a PgAdmin4, if you like:
 * Check out Menu -> Ports to access port 80
 * postgres@killercoda.sh / postgres
 
-(setup connection to `red`, `green` or `blue` host as user `postgres`, password does not matter) <br />
+(setup connection to `red` (leader), `green` or `blue` host as user `postgres`, password does not matter) <br />
 (takes ~3 mins to start, be patient or use `psql`)
 
 <br />
