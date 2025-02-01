@@ -1,0 +1,46 @@
+version: "3.2"
+services:
+  red:
+    image: postgres:17-alpine
+    entrypoint: "/bin/bash -c 'apk add vim && /bin/sleep 720000'"
+    working_dir: /root/bin
+    environment:
+      - PGUSER=postgres
+      - PGHOST=localhost
+    volumes:
+      - "/mnt/red/:/var/lib/postgresql/"
+      - "/mnt/wal-archive/:/mnt/wal-archive"
+      - "/root/bin/:/root/bin/"
+      - "/ks/bashrc-red:/root/.bashrc"
+    ports:
+      - "6432:5432"
+
+  green:
+    image: postgres:17-alpine
+    entrypoint: "/bin/bash -c 'apk add vim && /bin/sleep 720000'"
+    working_dir: /root/bin
+    environment:
+      - PGUSER=postgres
+      - PGHOST=localhost
+    volumes:
+      - "/mnt/green/:/var/lib/postgresql/"
+      - "/mnt/wal-archive/:/mnt/wal-archive"
+      - "/root/bin/:/root/bin/"
+      - "/ks/bashrc-green:/root/.bashrc"
+    ports:
+      - "7432:5432"
+
+  blue:
+    image: postgres:17-alpine
+    entrypoint: "/bin/bash -c 'apk add vim && /bin/sleep 720000'"
+    working_dir: /root/bin
+    environment:
+      - PGUSER=postgres
+      - PGHOST=localhost
+    volumes:
+      - "/mnt/blue/:/var/lib/postgresql/"
+      - "/mnt/wal-archive/:/mnt/wal-archive"
+      - "/root/bin/:/root/bin/"
+      - "/ks/bashrc-blue:/root/.bashrc"
+    ports:
+      - "8432:5432"

@@ -1,0 +1,86 @@
+{
+  "title": "Physical Replication Deep Dive",
+  "description": "Practical Hands-on based on my session at Prague PostgreSQL Developer Day with manual Postgres configuration. You will learn how to setup a cluster, hot to do a switchover, simulate failover and much more.",
+  "details": {
+    "steps": [
+      {
+        "title": "InitDB Red Leader",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "pg_basebackup Green Replica",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Low Level copy Blue Replica",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Understanding status from Leader",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Understanding status from Replica",
+        "text": "step5/text.md"
+      },
+      {
+        "title": "Simulating Replication conflict",
+        "text": "step6/text.md"
+      },
+      {
+        "title": "Switchover - stop Old Leader",
+        "text": "step7/text.md"
+      },
+      {
+        "title": "Switchover - choose and promote New Leader",
+        "text": "step8/text.md"
+      },
+      {
+        "title": "Switchover - Replica follows New Leader",
+        "text": "step9/text.md"
+      },
+      {
+        "title": "Switchover - Old Leader turned into Replica",
+        "text": "step10/text.md"
+      },
+      {
+        "title": "Failover - simple simulation",
+        "text": "step11/text.md"
+      },
+      {
+        "title": "Split-brain",
+        "text": "step12/text.md"
+      },
+      {
+        "title": "Rescue the Old Leader",
+        "text": "step13/text.md"
+      }
+    ],
+    "finish": {
+      "text": "finish/finish.md"
+    },
+    "intro": {
+      "text": "init/init.md",
+      "background": "init/background.sh",
+      "foreground": "init/foreground.sh"
+    },
+    "assets": {
+      "host01": [
+        {"file": "0-init/0-init-all-for-me.sh", "target": "/root/bin/0-init", "chmod": "+x"},
+        {"file": "0-init/1-initdb-red.sh", "target": "/root/bin/0-init", "chmod": "+x"},
+        {"file": "0-init/2-create-replica-green.sh", "target": "/root/bin/0-init", "chmod": "+x"},
+        {"file": "0-init/3-create-replica-blue.sh", "target": "/root/bin/0-init", "chmod": "+x"},
+        {"file": "1-load-data/pgbench.sh", "target": "/root/bin/1-load-data", "chmod": "+x"},
+        {"file": "docker-compose.yaml", "target": "/ks/pg"},
+        {"file": "pgadmin/docker-compose.yaml", "target": "/ks/pgadmin"},
+        {"file": "bashrc-red", "target": "/ks"},
+        {"file": "bashrc-green", "target": "/ks"},
+        {"file": "bashrc-blue", "target": "/ks"},
+        {"file": "wait-background.sh", "target": "/ks", "chmod": "+x"}
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu-4GB"
+  }
+}
