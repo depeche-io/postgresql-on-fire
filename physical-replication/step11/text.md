@@ -29,7 +29,7 @@ docker exec -it pg_green_1 /bin/bash
 ```{{exec}}
 </details>
 
-And stop Postgers (as user `postgres`).
+And stop Postgres (as user `postgres`).
 <details><summary>Solution</summary>
 <br />
 ```plain

@@ -23,7 +23,7 @@ echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_slot_name = 'red'"
 ```{{exec}}
 </details>
 
-And start Postgers (as user `postgres`).
+And start Postgres (as user `postgres`).
 <details><summary>Solution</summary>
 <br />
 ```plain
