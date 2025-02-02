@@ -2,18 +2,12 @@ Each cluster is created by creating a leader (primary instance). Running contain
 
 Connect inside the *pg_red_1* container.
 
-```plain
-docker exec -it pg_red_1 /bin/bash
-```{{exec}}
-
-
 <details><summary>Solution</summary>
 <br />
 
 ```plain
 docker exec -it pg_red_1 /bin/bash
 ```{{exec}}
-
 </details>
 
 Create `/var/log/postgresql/data/` and change owner to `postgres` (you are a root inside the container, PG needs to be run as `postgres` user).
