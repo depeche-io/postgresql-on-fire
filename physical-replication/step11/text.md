@@ -1,4 +1,4 @@
-*green* is the Leader, *red* and *blue* are the replicas. Manual failover is very similar to a switchover with one very crucial difference - you need to make absolutely sure, that the Old Leader can't start again. More precisely - that the Old Leader won't get any writes. <br />
+*green* is the Leader, <span style='color:red'>red</span> and *blue* are the replicas. Manual failover is very similar to a switchover with one very crucial difference - you need to make absolutely sure, that the Old Leader can't start again. More precisely - that the Old Leader won't get any writes. <br />
 
 Procedure
 1. Start with 1 Leader (DEAD !) + healthy 2 Replicas

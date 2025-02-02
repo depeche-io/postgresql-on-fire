@@ -1,4 +1,4 @@
-Each cluster is created by creating a leader (primary instance). Running container *red* should be used for this.
+Each cluster is created by creating a leader (primary instance). Running container <span style='color:red'>red</span> should be used for this.
 
 Connect inside the *pg_red_1* container.
 
@@ -70,7 +70,7 @@ psql -p $PORT_RED -c 'create database mydb'
 </details>
 (and exit)
 
-We should generate some small load. This way there will be some constant data influx to *red* and you can check these data changes later on.
+We should generate some small load. This way there will be some constant data influx to <span style='color:red'>red</span> and you can check these data changes later on.
 
 Open the second shell (+ Tab) and run [pgbench](https://www.postgresql.org/docs/current/pgbench.html) there. You can keep it running with `1 thread` during the whole scenario.
 

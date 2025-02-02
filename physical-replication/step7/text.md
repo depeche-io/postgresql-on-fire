@@ -13,7 +13,7 @@ Result
 * We didn't lose ANY data
 * WAL timeline has changed
 
-First we enter *red* Leader's container *pg_red_1*.
+First we enter <span style='color:red'>red</span> Leader's container *pg_red_1*.
 <details><summary>Solution</summary>
 <br />
 

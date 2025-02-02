@@ -1,4 +1,4 @@
-Now we are in a situation that the *red* Leader is stopped and we have two Replicas running. We can assume that they are both healthy and we can promote any of them to become a new Leader, let's say *green*. We can do this online just with `psql`. We should also create replication slots before the promotion, just to make sure that we won't lose any WAL data in the process.
+Now we are in a situation that the <span style='color:red'>red</span> Leader is stopped and we have two Replicas running. We can assume that they are both healthy and we can promote any of them to become a new Leader, let's say *green*. We can do this online just with `psql`. We should also create replication slots before the promotion, just to make sure that we won't lose any WAL data in the process.
 
 <details><summary>Solution</summary>
 <br />

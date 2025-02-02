@@ -1,4 +1,4 @@
-*green* is the Leader, *red* and *blue* are the replicas. In the previous steps, the Old Leader never got any new writes after New Leader was promoted. So in these scenarios it's safe to switch Old Leader to Replica. However this is not always the case. Let's now simulate the worst possible scenario `split-brain`.<br />
+*green* is the Leader, <span style='color:red'>red</span> and *blue* are the replicas. In the previous steps, the Old Leader never got any new writes after New Leader was promoted. So in these scenarios it's safe to switch Old Leader to Replica. However this is not always the case. Let's now simulate the worst possible scenario `split-brain`.<br />
 
 We just promote one the Replicas and do few writes there. To hold this scenario, we should have `pgbench` running against *green* Leader, so the WAL files indeed diverge.<br />
 
@@ -22,7 +22,7 @@ CREATE TABLE datatable AS SELECT generate_series AS rowid, random() as rand from
 </details>
 (exit `psql`)
 
-Now we are in the situation where *green* is the Leader with *red* Replica following. And there is a completely separate PG cluster with *blue* Leader2 that currently don't share the writes. You can for example see that *red* don't have a table created for *blue*.
+Now we are in the situation where *green* is the Leader with <span style='color:red'>red</span> Replica following. And there is a completely separate PG cluster with *blue* Leader2 that currently don't share the writes. You can for example see that <span style='color:red'>red</span> don't have a table created for *blue*.
 <details><summary>Solution</summary>
 <br />
 

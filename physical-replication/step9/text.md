@@ -1,4 +1,4 @@
-Now *red* Old Leader is stopped, *green* New Leader is running and we should make the *blue* Replica follow a *green* New Leader. This can be done online via `psql` simple configuration change.
+Now <span style='color:red'>red</span> Old Leader is stopped, *green* New Leader is running and we should make the *blue* Replica follow a *green* New Leader. This can be done online via `psql` simple configuration change.
 
 FIXME: HERE
 <details><summary>Solution</summary>

@@ -1,4 +1,4 @@
-Connect to *red* Leader.
+Connect to <span style='color:red'>red</span> Leader.
 
 <details><summary>Solution</summary>
 <br />
