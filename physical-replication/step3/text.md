@@ -1,5 +1,3 @@
-# Creating a cluster - Low Level copy Blue Replica
-
 We have a *red* leader, *green* Replica, we can now try a different bootstrapping method.
 Two terminals will be required, the process is:
 
@@ -12,6 +10,7 @@ In Tab1 - connect to *red* Leader, [create a replication slot](https://pgpedia.i
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 psql -p $PORT_RED
 SELECT pg_create_physical_replication_slot('blue');
@@ -31,6 +30,7 @@ You can close Tab2. Now we can go back to Tab1 and either simply close the sessi
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 SELECT * FROM pg_backup_stop(wait_for_archive => false);
 ```{{exec}}
@@ -41,6 +41,7 @@ We have the corrent datadir for the replica, however it has no idea it should fo
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 docker exec -it pg_green_1 /bin/bash
 ```{{exec}}
@@ -50,6 +51,7 @@ Use the [precreated replication slot](https://postgresqlco.nf/doc/en/param/prima
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 touch /var/lib/postgresql/data/standby.signal
 echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_conninfo = 'user=root passfile=''/root/.pgpass'' channel_binding=prefer host=''red'' port=5432 sslmode=prefer sslnegotiation=postgres sslcompression=0 sslcertmode=allow sslsni=1 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres gssdelegation=0 target_session_attrs=any load_balance_hosts=disable'"
@@ -61,6 +63,7 @@ Now let's start the Postgres (as `postgres` user).
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
@@ -75,6 +78,7 @@ You can now connect to *blue* Replica and verify that the `mydb` exists there.
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 psql -p $PORT_BLUE mydb
 \dt

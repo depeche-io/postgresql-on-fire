@@ -44,15 +44,15 @@
         "text": "step10/text.md"
       },
       {
-        "title": "Failover - simple simulation",
+        "title": "Failover - explanation",
         "text": "step11/text.md"
       },
       {
-        "title": "Split-brain",
+        "title": "Split-brain scenario",
         "text": "step12/text.md"
       },
       {
-        "title": "Rescue the Old Leader",
+        "title": "Rescue the Old Leader with pg_rewind",
         "text": "step13/text.md"
       }
     ],

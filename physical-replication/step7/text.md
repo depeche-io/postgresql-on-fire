@@ -1,5 +1,3 @@
-# Switchover - stop Old Leader
-
 Switchover is a planned switch of the Leader to other PG instance. (In comparison to Failover, which is not planned.)<br />
 
 Procedure
@@ -19,6 +17,7 @@ Result
 First we enter *red* Leader's container *pg_red_1*.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 docker exec -it pg_red_1 /bin/bash
 ```{{exec}}
@@ -27,6 +26,7 @@ docker exec -it pg_red_1 /bin/bash
 Now we stop Postgres (as user `postgres`).
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data stop'
 ```{{exec}}
@@ -37,6 +37,7 @@ su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data stop'
 Also it would be a good idea to stop `pgbench` on the host at this point.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 pkill pgbench
 ```{{exec}}

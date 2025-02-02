@@ -1,11 +1,10 @@
-# Creating a cluster - pg_basebackup Green Replica
-
 We have a *red* leader, now we can bootstrap a first replica. We'll use standard procedure for this including `pg_basebackup` tool.
 
 Connect inside the *pg_green_1* container.
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 docker exec -it pg_green_1 /bin/bash
 ```{{exec}}
@@ -15,6 +14,7 @@ Now create a replica via pg_basebackup from *red*. Use replication slot *green* 
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 pg_basebackup -c fast -C -P -v --slot=green -R -h red -D /var/lib/postgresql/data
 ```{{exec}}
@@ -24,6 +24,7 @@ Now change datadir ownership to `postgres` and permissions to `750`.
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 chown -R postgres /var/lib/postgresql/data
 chmod 750 /var/lib/postgresql/data
@@ -34,6 +35,7 @@ Now let's start the Postgres (as `postgres` user).
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
@@ -48,6 +50,7 @@ You can now connect to *green* Replica and verify that the `mydb` exists there.
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 psql -p $PORT_GREEN mydb
 \dt

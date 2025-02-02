@@ -1,9 +1,8 @@
-# Understanding status from Replica
-
 Now let's inspect replica. It doesn't matter which of them, both are equal.
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 psql -p $PORT_GREEN
 ```{{exec}}
@@ -12,6 +11,7 @@ psql -p $PORT_GREEN
 We don't have some of the previous Leader's functions available.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 SELECT pg_current_wal_lsn();
 SELECT pg_current_wal_insert_lsn();
@@ -21,6 +21,7 @@ SELECT pg_current_wal_insert_lsn();
 Replica is "in recovery" in the PG terminology.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 SELECT pg_is_in_recovery();
 ```{{exec}}
@@ -29,6 +30,7 @@ SELECT pg_is_in_recovery();
 We can also see a current status.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 SELECT * FROM pg_stat_wal_receiver;
 ```{{exec}}
@@ -47,6 +49,7 @@ Probably the most important one will be `flush_lsn`, since this means that you s
 Also there is a `walreceiver` process in the Replica's OS.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 docker exec -it pg_green_1 /bin/bash
 ps uax | grep walreceiver

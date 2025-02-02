@@ -14,6 +14,7 @@ Create `/var/log/postgresql/data/` and change owner to `postgres` (you are a roo
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 mkdir -p /var/log/postgresql/data/
 chown postgres /var/lib/postgresql/data/ /var/log/postgresql/
@@ -34,6 +35,7 @@ Now enable network login for other users. In our solution, we enable `trust` for
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 echo >> /var/lib/postgresql/data/pg_hba.conf "host all all  0.0.0.0/0 trust"
 echo >> /var/lib/postgresql/data/pg_hba.conf "host replication all  0.0.0.0/0 trust"
@@ -44,6 +46,7 @@ Now let's start the Postgres (as `postgres` user).
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
@@ -58,6 +61,7 @@ Let's now work from the host OS and create a user `repl` with superuser priviled
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 psql -p $PORT_RED -c 'create user repl with superuser'
 psql -p $PORT_RED -c 'create database mydb'
@@ -71,6 +75,7 @@ Open the second shell (+ Tab) and run [pgbench](https://www.postgresql.org/docs/
 
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 pgbench -d mydb -i -P1 -j 1 -T 3600
 ```{{exec}}

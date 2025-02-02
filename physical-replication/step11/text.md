@@ -1,5 +1,3 @@
-# Failover - simple simulation
-
 *green* is the Leader, *red* and *blue* are the replicas. Manual failover is very similar to a switchover with one very crucial difference - you need to make absolutely sure, that the Old Leader can't start again. More precisely - that the Old Leader won't get any writes. <br />
 
 Procedure
@@ -24,6 +22,7 @@ The "Old Leader can't start" guarantee is very technology specific ranging from 
 Enter the *green* container *pg_green_1*.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 docker exec -it pg_green_1 /bin/bash
 ```{{exec}}
@@ -32,6 +31,7 @@ docker exec -it pg_green_1 /bin/bash
 And stop Postgres (as user `postgres`).
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data stop'
 ```{{exec}}
@@ -40,6 +40,7 @@ su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data stop'
 Now you can wait a bit and check replication status on any of the Replicas (in other Tab).
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 psql -p $PORT_RED -c 'SELECT * FROM pg_stat_wal_receiver;'
 ```{{exec}}
@@ -48,6 +49,7 @@ psql -p $PORT_RED -c 'SELECT * FROM pg_stat_wal_receiver;'
 Start Postgres again (as user `postgres`)
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
@@ -57,6 +59,7 @@ su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 And after few seconds, you should see the process working again.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 psql -p $PORT_RED -c 'SELECT * FROM pg_stat_wal_receiver;'
 ```{{exec}}
