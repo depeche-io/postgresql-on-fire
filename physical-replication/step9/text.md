@@ -10,7 +10,10 @@ SELECT pg_reload_conf();
 ```{{exec}}
 </details>
 (We assume that the replication slot name is unchanged.)<br />
-(exit psql)
 
+(exit `psql`)
+```plain
+\q
+```{{exec}}
 
 <br />

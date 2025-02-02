@@ -42,7 +42,10 @@ psql -p $PORT_RED mydb
 \dt
 ```{{exec}}
 </details>
-(and exit)
 
+(and exit `psql`)
+```plain
+\q
+```{{exec}}
 
 <br />

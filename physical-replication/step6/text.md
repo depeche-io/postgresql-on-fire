@@ -39,4 +39,10 @@ SELECT pg_reload_conf();
 ```{{exec}}
 </details>
 
+(exit from `psql`)
+
+```plain
+\q
+```{{exec}}
+
 <br />

@@ -107,7 +107,12 @@ You can also see the latest data from the replica's view on the Leader.
 SELECT * FROM pg_stat_replication;
 ```{{exec}}
 </details>
+
 (exit from `psql`)
+
+```plain
+\q
+```{{exec}}
 
 Also there is a `walsender` process for each Replica running which you can see with simple Linux OS tools in the *pg_red_1* container.
 <details><summary>Solution</summary>
@@ -118,5 +123,11 @@ docker exec -it pg_red_1 /bin/bash
 ps uax | grep walsender
 ```{{exec}}
 </details>
+
+Quit the container shell.
+
+```plain
+exit
+```{{exec}}
 
 <br />

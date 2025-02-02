@@ -13,7 +13,6 @@ Result
 * We didn't lose ANY data
 * WAL timeline has changed
 
-
 First we enter *red* Leader's container *pg_red_1*.
 <details><summary>Solution</summary>
 <br />
@@ -31,7 +30,12 @@ Now we stop Postgres (as user `postgres`).
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data stop'
 ```{{exec}}
 </details>
-(exit the container)<br />
+
+(exit the container)
+```plain
+exit
+```{{exec}}
+
 <br />
 
 Also it would be a good idea to stop `pgbench` on the host at this point.
