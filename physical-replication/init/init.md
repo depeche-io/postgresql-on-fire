@@ -8,7 +8,7 @@ Scenarios are constructed step-by-step with a correct answer hidden at first, so
  <br />
 
 There are 3 PG containers controlled via /ks/pg/docker-compose.yaml <br />
-<span style='color:red'>red</span>
+<span style="color:red">red</span>
 * port $PORT_RED = 6432 -> 5432
 * datadir /mnt/red
 ```plain
