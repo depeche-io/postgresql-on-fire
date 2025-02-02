@@ -4,15 +4,15 @@
   "details": {
     "steps": [
       {
-        "title": "InitDB Red Leader",
+        "title": "Creating a cluster - InitDB Red Leader",
         "text": "step1/text.md"
       },
       {
-        "title": "pg_basebackup Green Replica",
+        "title": "Creating a cluster - pg_basebackup Green Replica",
         "text": "step2/text.md"
       },
       {
-        "title": "Low Level copy Blue Replica",
+        "title": "Creating a cluster - Low Level copy Blue Replica",
         "text": "step3/text.md"
       },
       {
