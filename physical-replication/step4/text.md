@@ -1,4 +1,4 @@
-Connect to <span style='color:red'>red</span> Leader.
+Connect to *red* Leader.
 
 <details><summary>Solution</summary>
 <br />
@@ -129,5 +129,3 @@ Quit the container shell.
 ```plain
 exit
 ```{{exec}}
-
-<br />

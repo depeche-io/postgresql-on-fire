@@ -1,4 +1,4 @@
-*green* is the Leader, <span style='color:red'>red</span> and *blue* are the replicas. In the previous steps, the Old Leader never got any new writes after New Leader was promoted. So in these scenarios it's safe to switch Old Leader to Replica. However this is not always the case. Let's now simulate the worst possible scenario `split-brain`.<br />
+*green* is the Leader, *red* and *blue* are the replicas. In the previous steps, the Old Leader never got any new writes after New Leader was promoted. So in these scenarios it's safe to switch Old Leader to Replica. However this is not always the case. Let's now simulate the worst possible scenario `split-brain`.<br />
 
 We just promote one the Replicas and do few writes there. To hold this scenario, we should have `pgbench` running against *green* Leader, so the WAL files indeed diverge.<br />
 
@@ -17,12 +17,15 @@ And also do some writes there to simulate the diverging WAL.
 <br />
 
 ```plain
-CREATE TABLE datatable AS SELECT generate_series AS rowid, random() as rand from generate_series(0, 1000000);"
+CREATE TABLE datatable AS SELECT generate_series AS rowid, random() as rand from generate_series(0, 1000000);
 ```{{exec}}
 </details>
 (exit `psql`)
+```plain
+\q
+```{{exec}}
 
-Now we are in the situation where *green* is the Leader with <span style='color:red'>red</span> Replica following. And there is a completely separate PG cluster with *blue* Leader2 that currently don't share the writes. You can for example see that <span style='color:red'>red</span> don't have a table created for *blue*.
+Now we are in the situation where *green* is the Leader with *red* Replica following. And there is a completely separate PG cluster with *blue* Leader2 that currently don't share the writes. You can for example see that *red* don't have a table created for *blue*.
 <details><summary>Solution</summary>
 <br />
 
@@ -31,7 +34,10 @@ psql -p $PORT_RED mydb
 SELECT * FROM datatable;
 ```{{exec}}
 </details>
-(exit `psql`)<br />
+(exit `psql`)
+```plain
+\q
+```{{exec}}
 
 <br />
 
@@ -56,6 +62,9 @@ pg_controldata -D /var/lib/postgresql/data
 ```{{exec}}
 </details>
 (exit the container)
+```plain
+exit
+```{{exec}}
 
 We can compare it *green* Leader's data to confirm the divergence.
 <details><summary>Solution</summary>
@@ -65,5 +74,3 @@ We can compare it *green* Leader's data to confirm the divergence.
 psql -p $PORT_GREEN -c 'SELECT * FROM pg_control_checkpoint();'
 ```{{exec}}
 </details>
-
-<br />

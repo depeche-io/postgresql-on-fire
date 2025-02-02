@@ -1,4 +1,4 @@
-*green* is the Leader, <span style='color:red'>red</span> and *blue* are the replicas. Manual failover is very similar to a switchover with one very crucial difference - you need to make absolutely sure, that the Old Leader can't start again. More precisely - that the Old Leader won't get any writes. <br />
+*green* is the Leader, *red* and *blue* are the replicas. Manual failover is very similar to a switchover with one very crucial difference - you need to make absolutely sure, that the Old Leader can't start again. More precisely - that the Old Leader won't get any writes. <br />
 
 Procedure
 1. Start with 1 Leader (DEAD !) + healthy 2 Replicas
@@ -42,7 +42,7 @@ Now you can wait a bit and check replication status on any of the Replicas (in o
 <br />
 
 ```plain
-psql -p $PORT_RED -c 'SELECT * FROM pg_stat_wal_receiver;'
+psql -h red -c 'SELECT * FROM pg_stat_wal_receiver;'
 ```{{exec}}
 </details>
 
@@ -55,6 +55,9 @@ su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
 </details>
 (exit the container)
+```plain
+exit
+```{{exec}}
 
 And after few seconds, you should see the process working again.
 <details><summary>Solution</summary>
@@ -64,5 +67,3 @@ And after few seconds, you should see the process working again.
 psql -p $PORT_RED -c 'SELECT * FROM pg_stat_wal_receiver;'
 ```{{exec}}
 </details>
-
-<br />

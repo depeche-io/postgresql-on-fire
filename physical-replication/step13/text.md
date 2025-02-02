@@ -1,4 +1,4 @@
-*green* is Leader followed by <span style='color:red'>red</span> Replica and next to them we have disabled *blue* Leader2 with a split-brain condition. We would like to make *blue* Replica again following *green*. There are basically three options on how to achieve this:
+*green* is Leader followed by *red* Replica and next to them we have disabled *blue* Leader2 with a split-brain condition. We would like to make *blue* Replica again following *green*. There are basically three options on how to achieve this:
 * recreate *blue* as a Replica (delete it and follow the `pg_basebackup` steps)
 * recreate *blue* from backups (similar as before but typically much faster for larger DBs)
 * use `pg_rewind` tool bundled in Postgres
@@ -56,5 +56,3 @@ So what has just happened? *blue* was turned into a Replica again, but we've los
 psql -p $PORT_BLUE -c 'SELECT * FROM datatable;'
 ```{{exec}}
 </details>
-
-<br />

@@ -75,5 +75,3 @@ Quit the container shell.
 ```plain
 exit
 ```{{exec}}
-
-<br />

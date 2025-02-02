@@ -13,7 +13,7 @@ Result
 * We didn't lose ANY data
 * WAL timeline has changed
 
-First we enter <span style='color:red'>red</span> Leader's container *pg_red_1*.
+First we enter *red* Leader's container *pg_red_1*.
 <details><summary>Solution</summary>
 <br />
 
@@ -46,5 +46,3 @@ Also it would be a good idea to stop `pgbench` on the host at this point.
 pkill pgbench
 ```{{exec}}
 </details>
-
-<br />

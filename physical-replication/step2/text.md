@@ -1,4 +1,4 @@
-We have a <span style='color:red'>red</span> leader, now we can bootstrap a first replica. We'll use standard procedure for this including `pg_basebackup` tool.
+We have a *red* leader, now we can bootstrap a first replica. We'll use standard procedure for this including `pg_basebackup` tool.
 
 Connect inside the *pg_green_1* container.
 
@@ -10,7 +10,7 @@ docker exec -it pg_green_1 /bin/bash
 ```{{exec}}
 </details>
 
-Now create a replica via pg_basebackup from <span style='color:red'>red</span>. Use replication slot *green* for it. You can do this as `root`, we'll corrent permissions later on.
+Now create a replica via pg_basebackup from *red*. Use replication slot *green* for it. You can do this as `root`, we'll corrent permissions later on.
 
 <details><summary>Solution</summary>
 <br />
@@ -56,6 +56,8 @@ psql -p $PORT_GREEN mydb
 \dt
 ```{{exec}}
 </details>
-(and exit)
 
-<br />
+(and exit `psql`)
+```plain
+\q
+```{{exec}}

@@ -8,12 +8,12 @@ psql -p $PORT_GREEN mydb
 ```{{exec}}
 </details>
 
-We can set `max_standy_streaming_delay` to some very small value.
+We can set `max_standby_streaming_delay` to some very small value.
 <details><summary>Solution</summary>
 <br />
 
 ```plain
-ALTER SYSTEM SET max_standy_streaming_delay TO '100ms';
+ALTER SYSTEM SET max_standby_streaming_delay TO '100ms';
 SELECT pg_reload_conf();
 ```{{exec}}
 </details>
@@ -34,7 +34,7 @@ We should not revert the config changes so they don't shoot us in a foot later o
 <br />
 
 ```plain
-ALTER SYSTEM SET max_standy_streaming_delay TO '30s';
+ALTER SYSTEM SET max_standby_streaming_delay TO '30s';
 SELECT pg_reload_conf();
 ```{{exec}}
 </details>
@@ -44,5 +44,3 @@ SELECT pg_reload_conf();
 ```plain
 \q
 ```{{exec}}
-
-<br />

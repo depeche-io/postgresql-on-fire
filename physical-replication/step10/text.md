@@ -1,8 +1,8 @@
-Now <span style='color:red'>red</span> Old Leader is stopped, *green* New Leader is running and *blue* Replica is following a *green* New Leader. We also need to turn <span style='color:red'>red</span> into a replica of *green* New Leader.<br />
+Now *red* Old Leader is stopped, *green* New Leader is running and *blue* Replica is following a *green* New Leader. We also need to turn *red* into a replica of *green* New Leader.<br />
 <br />
-The most important is to do this procedure *BEFORE* the <span style='color:red'>red</span> is started again, otherwise it would start up as a Leader and might get some additional writes (you'll see later on).
+The most important is to do this procedure *BEFORE* the *red* is started again, otherwise it would start up as a Leader and might get some additional writes (you'll see later on).
 
-Enter the <span style='color:red'>red</span> container *pg_red_1*.
+Enter the *red* container *pg_red_1*.
 <details><summary>Solution</summary>
 <br />
 
@@ -32,6 +32,10 @@ su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
 </details>
 
+(exit the container shell)
+```plain
+exit
+```{{exec}}
 
 Trust, but verify - check some data or replication status from the previous steps.
 <details><summary>Solution</summary>
@@ -47,5 +51,3 @@ psql -p $PORT_RED mydb
 ```plain
 \q
 ```{{exec}}
-
-<br />

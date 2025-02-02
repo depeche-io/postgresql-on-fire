@@ -1,4 +1,4 @@
-We have a <span style='color:red'>red</span> leader, *green* Replica, we can now try a different bootstrapping method.
+We have a *red* leader, *green* Replica, we can now try a different bootstrapping method.
 Two terminals will be required, the process is:
 
 1. We ask a Leader to start a backup
@@ -6,7 +6,7 @@ Two terminals will be required, the process is:
 3. We send a Leader stop backup signal
 4. We turn Replicas's datadir to Replica
 
-In Tab1 - connect to <span style='color:red'>red</span> Leader, [create a replication slot](https://pgpedia.info/p/pg_create_physical_replication_slot.html) for *blue* and [start a backup](https://pgpedia.info/p/pg_backup_start.html).
+In Tab1 - connect to *red* Leader, [create a replication slot](https://pgpedia.info/p/pg_create_physical_replication_slot.html) for *blue* and [start a backup](https://pgpedia.info/p/pg_backup_start.html).
 
 <details><summary>Solution</summary>
 <br />
@@ -15,6 +15,7 @@ In Tab1 - connect to <span style='color:red'>red</span> Leader, [create a replic
 psql -p $PORT_RED
 SELECT pg_create_physical_replication_slot('blue');
 SELECT pg_backup_start(label => 'blue', fast => true);
+\q
 ```{{exec}}
 </details>
 
@@ -54,7 +55,7 @@ SELECT * FROM pg_backup_stop(wait_for_archive => false);
 ```{{exec}}
 </details>
 
-We have the corrent datadir for the replica, however it has no idea it should follow <span style='color:red'>red</span> Leader, make it a proper Replica. Connect inside the *pg_blue_1* container.
+We have the corrent datadir for the replica, however it has no idea it should follow *red* Leader, make it a proper Replica. Connect inside the *pg_blue_1* container.
 
 
 <details><summary>Solution</summary>
@@ -108,5 +109,3 @@ Quit the `psql`.
 ```plain
 \q
 ```{{exec}}
-
-<br />

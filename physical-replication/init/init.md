@@ -8,7 +8,7 @@ Scenarios are constructed step-by-step with a correct answer hidden at first, so
  <br />
 
 There are 3 PG containers controlled via /ks/pg/docker-compose.yaml <br />
-<span style="color:red;">red</span>
+*red*
 * port $PORT_RED = 6432 -> 5432
 * datadir /mnt/red
 ```plain
@@ -39,5 +39,3 @@ Also, there is a PgAdmin4, if you like:
 <br />
 
 You can also follow my [original presentation for P2D2 2025](https://docs.google.com/presentation/d/1pm-GaYRyMo3v0CtgrKTGPHRCnf30ki3lGc4tPOPSnmg/edit#slide=id.g32780e88598_0_54).
-
-<br />
