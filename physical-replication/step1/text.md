@@ -19,6 +19,7 @@ Create `/var/log/postgresql/data/` and change owner to `postgres` (you are a roo
 mkdir -p /var/log/postgresql/data/
 chown postgres /var/lib/postgresql/data/ /var/log/postgresql/
 ```{{exec}}
+
 </details>
 
 As a user `postgres` [initialize empty database cluster](https://www.postgresql.org/docs/current/app-initdb.html). Enable checksums (we will need them later on).
@@ -77,7 +78,8 @@ Open the second shell (+ Tab) and run [pgbench](https://www.postgresql.org/docs/
 <br />
 
 ```plain
-pgbench -d mydb -i -P1 -j 1 -T 3600
+pgbench -d mydb -i
+pgbench -d mydb -P1 -j 1 -T 3600
 ```{{exec}}
 </details>
 
