@@ -38,8 +38,11 @@ Now we are in the situation where *green* is the Leader with *red* Replica follo
 psql -p $PORT_RED mydb
 SELECT * FROM datatable;
 ```{{exec}}
+
 </details>
+
 (exit `psql`)
+
 ```plain
 \q
 ```{{exec}}
@@ -65,8 +68,11 @@ We can also inspect PG datata via [pg_controldata](https://www.postgresql.org/do
 ```plain
 pg_controldata -D /var/lib/postgresql/data
 ```{{exec}}
+
 </details>
+
 (exit the container)
+
 ```plain
 exit
 ```{{exec}}
