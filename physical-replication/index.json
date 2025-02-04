@@ -1,5 +1,5 @@
 {
-  "title": "Physical Replication Deep Dive",
+  "title": "Switchover and Failover Deep Dive (Physical Replication)",
   "description": "Practical Hands-on based on my session at Prague PostgreSQL Developer Day with manual Postgres configuration. You will learn how to setup a cluster, hot to do a switchover, simulate failover and much more.",
   "details": {
     "steps": [
