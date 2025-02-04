@@ -47,14 +47,18 @@ psql -h red -c 'SELECT * FROM pg_stat_wal_receiver;'
 </details>
 
 Start Postgres again (as user `postgres`)
+
 <details><summary>Solution</summary>
 <br />
 
 ```plain
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
+
 </details>
+
 (exit the container)
+
 ```plain
 exit
 ```{{exec}}

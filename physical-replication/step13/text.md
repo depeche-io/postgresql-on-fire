@@ -32,7 +32,7 @@ If the process has succeeded, we should now have the same datadir as the Leader 
 
 ```plain
 touch /var/lib/postgresql/data/standby.signal
-echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_conninfo = 'user=root passfile=''/root/.pgpass'' channel_binding=prefer host=''green'' port=5432 sslmode=prefer sslnegotiation=postgres sslcompression=0 sslcertmode=allow sslsni=1 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres gssdelegation=0 target_session_attrs=any load_balance_hosts=disable'"
+echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_conninfo = 'user=postgres passfile=''/root/.pgpass'' channel_binding=prefer host=''green'' port=5432 sslmode=prefer sslnegotiation=postgres sslcompression=0 sslcertmode=allow sslsni=1 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres gssdelegation=0 target_session_attrs=any load_balance_hosts=disable'"
 echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_slot_name = 'blue'"
 ```{{exec}}
 </details>
@@ -46,7 +46,12 @@ And start Postgres (as user `postgres`).
 su - postgres -c '/usr/local/bin/pg_ctl -D /var/lib/postgresql/data start'
 ```{{exec}}
 </details>
+
 (exit the container)
+
+```plain
+exit
+```{{exec}}
 
 So what has just happened? *blue* was turned into a Replica again, but we've lost some data in the process. You can verify that the `datatable` is no more.
 <details><summary>Solution</summary>

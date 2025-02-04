@@ -1,4 +1,4 @@
-We have a *red* leader, now we can bootstrap a first replica. We'll use standard procedure for this including `pg_basebackup` tool.
+We have a *red* leader, now we can bootstrap a first replica. We'll use standard procedure for this including [pg_basebackup](https://www.postgresql.org/docs/current/app-pgbasebackup.html) tool.
 
 Connect inside the *pg_green_1* container.
 

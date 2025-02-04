@@ -15,7 +15,6 @@ In Tab1 - connect to *red* Leader, [create a replication slot](https://pgpedia.i
 psql -p $PORT_RED
 SELECT pg_create_physical_replication_slot('blue');
 SELECT pg_backup_start(label => 'blue', fast => true);
-\q
 ```{{exec}}
 </details>
 
@@ -73,7 +72,7 @@ Use the [precreated replication slot](https://postgresqlco.nf/doc/en/param/prima
 
 ```plain
 touch /var/lib/postgresql/data/standby.signal
-echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_conninfo = 'user=root passfile=''/root/.pgpass'' channel_binding=prefer host=''red'' port=5432 sslmode=prefer sslnegotiation=postgres sslcompression=0 sslcertmode=allow sslsni=1 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres gssdelegation=0 target_session_attrs=any load_balance_hosts=disable'"
+echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_conninfo = 'user=postgres passfile=''/root/.pgpass'' channel_binding=prefer host=''red'' port=5432 sslmode=prefer sslnegotiation=postgres sslcompression=0 sslcertmode=allow sslsni=1 ssl_min_protocol_version=TLSv1.2 gssencmode=prefer krbsrvname=postgres gssdelegation=0 target_session_attrs=any load_balance_hosts=disable'"
 echo >>/var/lib/postgresql/data/postgresql.auto.conf "primary_slot_name = 'blue'"
 ```{{exec}}
 </details>

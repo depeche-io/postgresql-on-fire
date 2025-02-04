@@ -32,7 +32,7 @@ SELECT system_identifier FROM pg_control_system();
 ```{{exec}}
 </details>
 
-A central concept to the replication is the [Write Ahead Log (WAL)](https://www.interdb.jp/pg/pgsql09/01.html) and [Log Sequence Number (LSN)](https://www.interdb.jp/pg/pgsql09/06.html).
+A central concept to the replication are the [Write Ahead Log (WAL)](https://www.interdb.jp/pg/pgsql09/01.html) and [Log Sequence Number (LSN)](https://www.interdb.jp/pg/pgsql09/06.html).
 
 You can easily access current LSN record and writing position.
 <details><summary>Solution</summary>

@@ -10,22 +10,27 @@ Let's promote *blue*.
 psql -p $PORT_BLUE mydb
 SELECT pg_promote();
 ```{{exec}}
+
 </details>
 
 And also do some writes there to simulate the diverging WAL.
+
 <details><summary>Solution</summary>
 <br />
 
 ```plain
 CREATE TABLE datatable AS SELECT generate_series AS rowid, random() as rand from generate_series(0, 1000000);
 ```{{exec}}
+
 </details>
+
 (exit `psql`)
+
 ```plain
 \q
 ```{{exec}}
 
-Now we are in the situation where *green* is the Leader with *red* Replica following. And there is a completely separate PG cluster with *blue* Leader2 that currently don't share the writes. You can for example see that *red* don't have a table created for *blue*.
+Now we are in the situation where *green* is the Leader with *red* Replica following. And there is a completely separate PG cluster with *blue* Leader2 that currently don't share the writes. You can for example see that *red* doesn't have a table created for *blue*.
 <details><summary>Solution</summary>
 <br />
 

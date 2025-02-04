@@ -29,6 +29,14 @@ BEGIN; SELECT * FROM pgbench_accounts ORDER BY random(), random(), random();
 
 We should see an error and our transaction will be terminated. In fact we have just created 100ms difference between `flush_lsn` and `replay_lsn` (because our query for was blocking WAL replaying for 100ms).
 
+Let's rollback the aborted transaction.
+<details><summary>Solution</summary>
+<br />
+```plain
+ROLLBACK;
+```{{exec}}
+</details>
+
 We should not revert the config changes so they don't shoot us in a foot later on.
 <details><summary>Solution</summary>
 <br />
