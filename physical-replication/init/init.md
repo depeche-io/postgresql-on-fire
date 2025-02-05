@@ -38,4 +38,4 @@ Also, there is a PgAdmin4, if you like:
 
 <br />
 
-You can also follow my [original presentation for P2D2 2025](https://docs.google.com/presentation/d/1pm-GaYRyMo3v0CtgrKTGPHRCnf30ki3lGc4tPOPSnmg/edit?usp=sharing).
+You can also follow my [presentation for P2D2 2025](https://docs.google.com/presentation/d/1pm-GaYRyMo3v0CtgrKTGPHRCnf30ki3lGc4tPOPSnmg/edit?usp=sharing).

@@ -32,9 +32,11 @@ We should see an error and our transaction will be terminated. In fact we have j
 Let's rollback the aborted transaction.
 <details><summary>Solution</summary>
 <br />
+
 ```plain
 ROLLBACK;
 ```{{exec}}
+
 </details>
 
 We should not revert the config changes so they don't shoot us in a foot later on.
